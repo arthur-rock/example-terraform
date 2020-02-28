@@ -13,6 +13,8 @@ Los recursos que se crean son:
  8. Elastic Ip.
  9. key_pair
 
+![alt text](https://github.com/arthur-rock/example-terraform/blob/master/images/vpc_subnet_custom_route_table_ec2.png)
+
 ## Requisitos.
 
  1. Una cuenta de aws y nuestro aws-cli versión 2 configurado.  https://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-chap-install.html
