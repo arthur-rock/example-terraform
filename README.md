@@ -1,7 +1,7 @@
 # Jugando con Terraform.
 
-Este repo construye el conjunto de recursos necesarios para crear un ec2 con una ip pública (Elastic Ip) usando el paradigma IaC (Infrastructure as Code) y terraform.
-Los recursos que se crean son: 
+Este repo construye el conjunto de recursos necesarios para crear un ec2 con una ip pública (Elastic Ip) usando IaC (Infrastructure as Code) y terraform.
+Los recursos que se crean son:
 
  1. Vpc.
  2. Subnet.
@@ -20,17 +20,17 @@ Los recursos que se crean son:
  1. Una cuenta de aws y nuestro aws-cli versión 2 configurado.  https://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-chap-install.html
  2. El cliente de Terraform.
   https://learn.hashicorp.com/terraform/azure/install_az
-  
+
  3. Permisos para crear los recursos antes descritos.
 
 ## Ejecución.
 
 >  $ git clone git@github.com:arthur-rock/example-terraform.git
 
->  $ terraform init 
+>  $ terraform init
 
 >  $ terraform apply
- 
+
 ## Limpieza de ambiente
 
 
