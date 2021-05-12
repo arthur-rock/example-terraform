@@ -26,7 +26,8 @@ spec:
       nodeAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
           nodeSelectorTerms:
-                    - matchExpressions:
+          - matchExpressions:
+          
             - key: failure-domain.beta.kubernetes.io/zone
               operator: In
               values:
