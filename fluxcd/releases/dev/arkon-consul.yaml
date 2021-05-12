@@ -26,17 +26,17 @@ spec:
       nodeAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
           nodeSelectorTerms:
-                    - matchExpressions:
-            - key: failure-domain.beta.kubernetes.io/zone
-              operator: In
-              values:
-              - eastus2-1
-              - eastus2-2
-              - eastus2-3
-            - key: agentpool
-              operator: In
-              values:
-              - default
+          - matchExpressions:
+  - key: failure-domain.beta.kubernetes.io/zone
+    operator: In
+    values:
+    - eastus2-1
+    - eastus2-2
+    - eastus2-3
+  - key: agentpool
+    operator: In
+    values:
+    - default
 
     affinity:
       nodeAffinity:
