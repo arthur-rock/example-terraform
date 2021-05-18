@@ -1,0 +1,47 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: redis
+  namespace: arkondata-dev
+  annotations:
+    fluxcd.io/automated:  "false"
+spec:
+  releaseName: arkon-redis
+  interval: 5m
+  chart:
+    spec:
+      chart: redis
+      version: 12.8.3
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: arkon-shared-resources
+      interval: 1m
+  values:
+    enabled: true
+    persistence:
+      enabled: true
+      storageClass: customaz
+    cluster:
+      enabled: false
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: failure-domain.beta.kubernetes.io/zone
+              operator: In
+              values:
+              - eastus2-1
+              - eastus2-2
+              - eastus2-3
+            - key: agentpool
+              operator: In
+              values:
+              - default
+
+  valuesFrom:
+    - kind: Secret
+      name: values-redis
+      valuesKey: values-redis.yaml
